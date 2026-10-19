@@ -115,6 +115,12 @@ export default function App() {
             <div className="border-4 border-black bg-white p-4 w-[800px] text-center shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
               <p className="text-2xl font-bold text-[#E11D48] tracking-widest">{userInput || '입력하세요...'}</p>
             </div>
+            <button
+              onClick={() => setGameState('TITLE_MENU')}
+              className="mt-4 px-4 py-2 border-2 border-black bg-white font-bold hover:bg-black hover:text-white transition-colors"
+            >
+              처음 화면으로
+            </button>
           </div>
         ) : null
       }
