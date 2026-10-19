@@ -1,0 +1,6 @@
+{
+  "name": "Typing Champion",
+  "description": "A fun, stage-based typing game for students with real-time rankings and daily missions.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

@@ -1,0 +1,52 @@
+{
+  "entities": {
+    "user": {
+      "title": "User",
+      "description": "User profile and progress",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "username": { "type": "string" },
+        "level": { "type": "number" },
+        "xp": { "type": "number" }
+      },
+      "required": ["uid", "username"]
+    },
+    "leaderboardEntry": {
+      "title": "Leaderboard Entry",
+      "description": "A single entry in the leaderboard",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "username": { "type": "string" },
+        "score": { "type": "number" }
+      },
+      "required": ["uid", "username", "score"]
+    },
+    "mission": {
+      "title": "Daily Mission",
+      "description": "Daily typing challenge",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "targetWpm": { "type": "number" },
+        "rewardXp": { "type": "number" }
+      },
+      "required": ["title", "targetWpm", "rewardXp"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "user" },
+      "description": "User data"
+    },
+    "/leaderboards/global/entries/{entryId}": {
+      "schema": { "$ref": "leaderboardEntry" },
+      "description": "Global leaderboard entries"
+    },
+    "/missions/{missionId}": {
+      "schema": { "$ref": "mission" },
+      "description": "Daily missions"
+    }
+  }
+}
